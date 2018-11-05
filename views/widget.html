@@ -1,0 +1,7 @@
+<div data-ec-textbox 
+	data-bg-color={{data.widget.textbox_background_color }}
+	data-text-color={{data.widget.textbox_text_color}}
+	style="font-size:{{data.widget.textbox_font_size or 1}}em;"
+class="instance-{{data.widget._id}}">
+	   {{ apos.areas.richText(data.widget.content) }}
+</div>

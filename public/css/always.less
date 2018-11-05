@@ -1,0 +1,30 @@
+@import 'variables.less';
+
+@length : length(@background_colors);
+
+.textbox-background(@background_colors; @index) when (iscolor(extract(@background_colors, @index))) and (@index > 0) {
+    .textbox-background(@background_colors; (@index - 1)); // decrement.
+   
+  @background_color: extract(@background_colors, @index);
+ 
+  [data-bg-color='@{index}'] {
+    background-color: @background_color;
+  }
+ 
+}
+.textbox-background(@background_colors; @length);
+
+
+@length : length(@text_colors);
+.textbox-text-color(@text_colors; @index) when (iscolor(extract(@text_colors, @index))) and (@index > 0) {
+    .textbox-text-color(@text_colors; (@index - 1)); // decrement.
+   
+  @text_color: extract(@text_colors, @index);
+ 
+  [data-text-color='@{index}'] {
+    color: @text_color;
+  }
+ 
+}
+.textbox-text-color(@text_colors; @length);
+
