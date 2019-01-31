@@ -1,4 +1,4 @@
-## QUOTE WIDGET
+## TEXTBOX WIDGET
 An [Apostrophe CMS](http://apostrophecms.org/) module to provide a quote block
 for your content. A mandatory quote content region, along with two optional
 regions for an author name, a header and any other author information that may be
