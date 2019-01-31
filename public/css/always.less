@@ -1,30 +1,106 @@
-@import 'variables.less';
+/*
+Fixed styles for quote widget
+*/
+.ec-quote-author{
+  margin-left: 100px;
 
-@length : length(@background_colors);
-
-.textbox-background(@background_colors; @index) when (iscolor(extract(@background_colors, @index))) and (@index > 0) {
-    .textbox-background(@background_colors; (@index - 1)); // decrement.
-   
-  @background_color: extract(@background_colors, @index);
- 
-  [data-bg-color='@{index}'] {
-    background-color: @background_color;
+  span{
+    padding:1px;
   }
- 
 }
-.textbox-background(@background_colors; @length);
 
+.ec-quote-author-info{
+  margin-left: 100px;
+  color: darkgray;
+}
+.quote-item{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.ec-quote-header{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 24px;
+}
 
-@length : length(@text_colors);
-.textbox-text-color(@text_colors; @index) when (iscolor(extract(@text_colors, @index))) and (@index > 0) {
-    .textbox-text-color(@text_colors; (@index - 1)); // decrement.
-   
-  @text_color: extract(@text_colors, @index);
- 
-  [data-text-color='@{index}'] {
-    color: @text_color;
+.ec-quote-content-0{ // mode quote (0)
+  font-size: 15px;
+  margin: 0 auto;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.6;
+  text-align: justify;
+  padding-left:20px;
+  padding-right:50px;
+  margin-left: 50px;
+  margin-right:50px;
+  margin-top:30px;
+  margin-bottom: 10px;
+}
+.ec-quote-content-1{ //mode general (1)
+  font-size: 15px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  line-height: 1.6;
+  text-align: justify;
+  padding-left:20px;
+  padding-right:50px;
+  margin-left: 30px;
+  margin-right:30px;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.ec-quote-content-2{ // mode simple (2)
+  font-size: 15px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  line-height: 1.6;
+  text-align: justify;
+  padding-left:20px;
+  padding-right:50px;
+  margin-left: 30px;
+  margin-right:30px;
+  margin-top:30px;
+  margin-bottom: 10px;
+}
+.ec-quote-content-0:before {
+  content: open-quote;
+  display: inline;
+  margin-left:-30px;
+  height: 0;
+  line-height: 0;
+  float: left;
+  top: 30px;
+  font-size: 3em;
+  text-shadow: 2px 2px gray;
+}
+.ec-quote-content-0::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  float: right;
+  font-size: 3em;
+  text-shadow: 2px 2px gray;
+  margin-right: -30px;
+}
+//adjust dot size from default to make them more visible
+.slick-dots{
+  li{
+    button{
+      &:hover, &:focus {
+        background: transparent
+      }
+      &:before{
+        font-size: 8px;
+      }
+    }
   }
- 
 }
-.textbox-text-color(@text_colors; @length);
+[data-loading] {
+    overflow: hidden;
+}
 
+[data-loading=""] {
+    display: none;
+}
